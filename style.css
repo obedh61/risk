@@ -1,0 +1,832 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: steelblue;
+    color: #fff;
+    font-family: 'Muli', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 100vh;
+    margin: 0;
+}
+
+.hidden{
+    display: none;
+}
+.shown{
+    display: block;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 20px 40px;
+    border-radius: 5px;
+}
+
+.container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.container a {
+    text-decoration: none;
+    color: lightblue;
+}
+
+.btn {
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    background: lightblue;
+    padding: 15px;
+    font-family: inherit;
+    font-size: 16px;
+    border: 0;
+    border-radius: 5px;
+}
+
+.btn:focus {
+    outline: 0;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.text {
+    margin-top: 30px;
+}
+
+.form-control {
+    position: relative;
+    margin: 20px 0 40px;
+    width: 300px;
+}
+
+.form-control input {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px #fff solid;
+    display: block;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 18px;
+    color: #fff;
+}
+
+.form-control input:focus,
+.form-control input:valid {
+    outline: 0;
+    border-bottom-color: lightblue;
+}
+
+.form-control label {
+    position: absolute;
+    top: 15px;
+    left: 0;
+}
+
+.form-control label span {
+    display: inline-block;
+    font-size: 18px;
+    min-width: 5px;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.form-control input:focus + label span,
+.form-control input:valid + label span {
+    color: lightblue;
+    transform: translateY(-30px);
+}
+
+
+#divUsersInLobby {
+    width: 600px;
+    height: 775px;
+    border: 1px solid #fff;
+    padding: 20px 20px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url(wars2.jpg);
+    -webkit-box-shadow: 11px -1px 19px -4px rgba(0,0,0,0.59);
+    -moz-box-shadow: 11px -1px 19px -4px rgba(0,0,0,0.59);
+    box-shadow: 11px -1px 19px -4px rgba(0,0,0,0.59);
+    border-radius: 5px;
+}
+
+.buttonLobby {
+    text-decoration: none;
+    backdrop-filter: blur(4px);
+    margin-top: 10px;
+    background: rgba(255, 255, 255, 0.30);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    /* backdrop-filter: blur(4px); */
+    color: #fff;
+    /* border-color: #fff; */
+    /* border-style: solid; */
+    width: 150px;
+    height: 50px;
+    font-size: 24px;
+    border-radius: 5px;
+}
+
+.buttonLobby:hover {
+    cursor: pointer;
+    margin-top: 10px;
+    background-color: #009879;
+    color: #fff;
+    border-color: #fff;
+    border-style: solid;
+    width: 150px;
+    height: 60px;
+    font-size: 24px;
+    border-radius: 5px;
+}
+
+#btnLogin{
+    margin-bottom: 17px;
+}
+
+
+#divUsersInLobby p {
+    font-size: 20px;
+}
+
+h1, h2, h3{
+    text-align: center;
+}
+.hidden{
+    display: none;
+}
+.shown{
+    display: block;
+}
+
+.buttonCell {
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    color: #fff;
+    border-color: #fff;
+    -webkit-box-shadow: 11px -1px 19px -4px rgba(0,0,0,0.59);
+    -moz-box-shadow: 11px -1px 19px -4px rgba(0,0,0,0.59);
+    box-shadow: 11px -1px 19px -4px rgba(0,0,0,0.59);
+}
+
+.btnNot {
+    cursor: pointer;
+    position: absolute;
+    font-size: 20px;
+    background-image: radial-gradient(circle at 116.45% 74.18%, #2a7f23 0, #04781e 50%, #00711a 100%);
+    height: 80px;
+    width: 80px;
+    border-radius: 50px;
+    color: #fff;
+    top: 460px;
+    left: 29px;
+    -webkit-box-shadow: 11px -1px 19px -4px rgba(0,0,0,0.59);
+    -moz-box-shadow: 11px -1px 19px -4px rgba(0,0,0,0.59);
+    box-shadow: 11px -1px 19px -4px rgba(0,0,0,0.59);
+}
+
+#divBoard{
+    position: relative;
+    height: 563px;
+    width: 1000px;
+    border: 1px solid gray;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url(Risk3_game_board.svg.png);
+    /* background-image: url(Risk3_game_board.svg.png) ; */
+    border-radius: 5px;
+    -webkit-box-shadow: 11px -1px 19px -4px rgba(0,0,0,0.59);
+    -moz-box-shadow: 11px -1px 19px -4px rgba(0,0,0,0.59);
+    box-shadow: 11px -1px 19px -4px rgba(0,0,0,0.59);
+}
+
+#divBoard:hover{
+    position: relative;
+    height: 563px;
+    width: 1000px;
+    border: 1px solid gray;
+    
+    background-image: url(Risk3_game_board.svg.png) ;
+    border-radius: 5px;
+    -webkit-box-shadow: 11px -1px 19px -4px rgba(0,0,0,0.59);
+    -moz-box-shadow: 11px -1px 19px -4px rgba(0,0,0,0.59);
+    box-shadow: 11px -1px 19px -4px rgba(0,0,0,0.59);
+}
+
+#info {
+    height: 60px;
+    width: 1000px;
+    display: flex;
+    margin-bottom: 20px;
+    backdrop-filter: blur(4px);
+    margin-top: 10px;
+    background: rgba(255, 255, 255, 0.30);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    /* backdrop-filter: blur(4px); */
+    color: #fff;
+    /* border-color: #fff; */
+    /* border-style: solid; */
+    font-size: 20px;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+#lblGameId {
+    margin: auto;
+}
+
+button#\31 countrie {
+    position: absolute;
+    top: 50px;
+    left: 30px;
+    opacity: 0.2;
+}
+
+button#\31 countrie:hover {
+    opacity: 1.0;
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+}
+
+button#\32 countrie {
+    position: absolute;
+    top: 50px;
+    left: 95px;
+    opacity: 0.2;
+}
+
+button#\32 countrie:hover {
+    opacity: 1.0;
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+}
+
+button#\33 countrie {
+    position: absolute;
+    top: 61px;
+    left: 322px;
+    opacity: 0.2;
+}
+
+button#\33 countrie:hover {
+    opacity: 1.0;
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+}
+
+button#\34 countrie {
+    position: absolute;
+    top: 101px;
+    left: 111px;
+    opacity: 0.2;
+}
+
+button#\34 countrie:hover {
+    opacity: 1.0;
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+}
+
+button#\35 countrie {
+    position: absolute;
+    top: 107px;
+    left: 200px;
+    opacity: 0.2;
+}
+
+button#\35 countrie:hover {
+    opacity: 1.0;
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+}
+
+button#\36 countrie {
+    position: absolute;
+    top: 107px;
+    left: 275px;
+    opacity: 0.2;
+}
+
+button#\36 countrie:hover {
+    opacity: 1.0;
+    height: 40px;
+    width: 40px;
+    font-size: 20px;
+}
+
+button#\37 countrie {
+    position: absolute;
+    top: 157px;
+    left: 152px;
+    opacity: 0.2;
+}
+
+button#\37 countrie:hover {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    opacity: 1.0;
+}
+
+button#\38 countrie {
+    position: absolute;
+    top: 181px;
+    left: 239px;
+    opacity: 0.2;
+}
+
+button#\38 countrie:hover {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    opacity: 1.0;
+}
+
+button#\39 countrie {
+    position: absolute;
+    top: 234px;
+    left: 124px;
+    opacity: 0.2;
+}
+
+button#\39 countrie:hover {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    opacity: 1.0;
+}
+
+button#\31 0countrie {
+    position: absolute;
+    top: 300px;
+    left: 200px;
+    opacity: 0.2;
+}
+
+button#\31 0countrie:hover {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    opacity: 1.0;
+}
+
+button#\31 1countrie {
+    position: absolute;
+    top: 375px;
+    left: 194px;
+    opacity: 0.2;
+}
+
+button#\31 1countrie:hover {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    opacity: 1.0;
+}
+
+button#\31 2countrie {
+    position: absolute;
+    top: 342px;
+    left: 261px;
+    opacity: 0.2;
+}
+
+button#\31 2countrie:hover {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    opacity: 1.0;
+}
+
+button#\31 3countrie {
+    position: absolute;
+    top: 487px;
+    left: 224px;
+    opacity: 0.2;
+}
+
+button#\31 3countrie:hover {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    opacity: 1.0;
+}
+
+button#\31 4countrie {
+    position: absolute;
+    top: 73px;
+    left: 425px;
+    opacity: 0.2;
+}
+
+button#\31 4countrie:hover {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    opacity: 1.0;
+}
+
+button#\31 5countrie {
+    position: absolute;
+    top: 64px;
+    left: 512px;
+    opacity: 0.2;
+}
+
+button#\31 5countrie:hover {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    opacity: 1.0;
+}
+
+button#\31 6countrie {
+    position: absolute;
+    top: 109px;
+    left: 602px;
+    opacity: 0.2;
+}
+
+button#\31 6countrie:hover {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    opacity: 1.0;
+}
+
+button#\31 7countrie {
+    position: absolute;
+    top: 133px;
+    left: 380px;
+    opacity: 0.2;
+}
+
+button#\31 7countrie:hover {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    opacity: 1.0;
+}
+
+button#\31 8countrie {
+    position: absolute;
+    top: 171px;
+    left: 469px;
+    opacity: 0.2;
+}
+
+button#\31 8countrie:hover {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    opacity: 1.0;
+}
+
+button#\31 9countrie {
+    position: absolute;
+    top: 215px;
+    left: 427px;
+    opacity: 0.2;
+}
+
+button#\31 9countrie:hover {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    opacity: 1.0;
+}
+
+button#\32 0countrie {
+    position: absolute;
+    top: 225px;
+    left: 500px;
+    opacity: 0.2;
+}
+
+button#\32 0countrie:hover {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    opacity: 1.0;
+}
+
+button#\32 1countrie {
+    position: absolute;
+    top: 134px;
+    right: 285px;
+    opacity: 0.2;
+}
+
+button#\32 1countrie:hover {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    opacity: 1.0;
+}
+
+button#\32 2countrie {
+    position: absolute;
+    top: 42px;
+    right: 240px;
+    opacity: 0.2;
+}
+
+button#\32 2countrie:hover {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    opacity: 1.0;
+}
+
+button#\32 3countrie {
+    position: absolute;
+    top: 54px;
+    right: 160px;
+    opacity: 0.2;
+}
+
+button#\32 3countrie:hover {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    opacity: 1.0;
+}
+
+button#\32 4countrie {
+    position: absolute;
+    top: 50px;
+    right: 67px;
+    opacity: 0.2;
+}
+
+button#\32 4countrie:hover {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    opacity: 1.0;
+}
+
+button#\32 5countrie {
+    position: absolute;
+    top: 107px;
+    right: 165px;
+    opacity: 0.2;
+}
+
+button#\32 5countrie:hover {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    opacity: 1.0;
+}
+
+button#\32 6countrie {
+    position: absolute;
+    top: 176px;
+    right: 319px;
+    opacity: 0.2;
+}
+
+button#\32 6countrie:hover {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    opacity: 1.0;
+}
+
+button#\32 7countrie {
+    position: absolute;
+    top: 210px;
+    right: 223px;
+    opacity: 0.2;
+}
+
+button#\32 7countrie:hover {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    opacity: 1.0;
+}
+
+button#\32 8countrie {
+    position: absolute;
+    top: 165px;
+    right: 136px;
+    opacity: 0.2;
+}
+
+button#\32 8countrie:hover {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    opacity: 1.0;
+}
+
+button#\32 9countrie {
+    position: absolute;
+    top: 199px;
+    right: 53px;
+    opacity: 0.2;
+}
+
+button#\32 9countrie:hover {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    opacity: 1.0;
+}
+
+button#\33 0countrie {
+    position: absolute;
+    top: 256px;
+    right: 333px;
+    opacity: 0.2;
+}
+
+button#\33 0countrie:hover {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    opacity: 1.0;
+}
+
+button#\33 1countrie {
+    position: absolute;
+    top: 256px;
+    right: 273px;
+    opacity: 0.2;
+}
+
+button#\33 1countrie:hover {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    opacity: 1.0;
+}
+
+button#\33 2countrie {
+    position: absolute;
+    top: 295px;
+    right: 177px;
+    opacity: 0.2;
+}
+
+button#\33 2countrie:hover {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    opacity: 1.0;
+}
+
+button#\33 3countrie {
+    position: absolute;
+    top: 300px;
+    left: 431px;
+    opacity: 0.2;
+}
+
+button#\33 3countrie:hover {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    opacity: 1.0;
+}
+
+button#\33 4countrie {
+    position: absolute;
+    top: 304px;
+    left: 505px;
+    opacity: 0.2;
+}
+
+button#\33 4countrie:hover {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    opacity: 1.0;
+}
+
+button#\33 5countrie {
+    position: absolute;
+    bottom: 129px;
+    left: 530px;
+    opacity: 0.2;
+}
+
+button#\33 5countrie:hover {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    opacity: 1.0;
+}
+
+button#\33 6countrie {
+    position: absolute;
+    bottom: 145px;
+    left: 603px;
+    opacity: 0.2;
+}
+
+button#\33 6countrie:hover {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    opacity: 1.0;
+}
+
+button#\33 7countrie {
+    position: absolute;
+    bottom: 75px;
+    left: 513px;
+    opacity: 0.2;
+}
+
+button#\33 7countrie:hover {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    opacity: 1.0;
+}
+
+button#\33 8countrie {
+    position: absolute;
+    bottom: 43px;
+    left: 635px;
+    opacity: 0.2;
+}
+
+button#\33 8countrie:hover {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    opacity: 1.0;
+}
+
+button#\33 9countrie {
+    position: absolute;
+    bottom: 141px;
+    right: 174px;
+    opacity: 0.2;
+}
+
+button#\33 9countrie:hover {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    opacity: 1.0;
+}
+
+button#\34 0countrie {
+    position: absolute;
+    bottom: 150px;
+    right: 61px;
+    opacity: 0.2;
+}
+
+button#\34 0countrie:hover {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    opacity: 1.0;
+}
+
+button#\34 1countrie {
+    position: absolute;
+    bottom: 70px;
+    right: 128px;
+    opacity: 0.2;
+}
+
+button#\34 1countrie:hover {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    opacity: 1.0;
+}
+
+button#\34 2countrie {
+    position: absolute;
+    bottom: 37px;
+    right: 27px;
+    opacity: 0.2;
+}
+
+button#\34 2countrie:hover {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    opacity: 1.0;
+}

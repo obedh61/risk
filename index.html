@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link rel="stylesheet" href="style.css">   
+
+</head>
+<body>
+    <div id="divLogin" class="shown">
+        <h1>Welcome to <span style="color: #9a1f1f; font-size: 50px;">Risk</span></h1>
+        <div  class="container">
+            <h1>Please Login</h1>
+            
+            <div class="form-control">
+                <input type="text" id="txtUsername" required>
+                <label>User Name</label>
+            </div>
+
+            <div class="form-control">
+                <input type="password" id="txtPassword" required>
+                <label>Password</label>
+            </div>
+
+            <button class="btn lock" id="btnLogin" onclick="btnLoginSignupClicked('login')">Login</button>
+
+            <button class="btn lock" onclick="btnLoginSignupClicked('signup')">signup</button>
+            
+            <p id="pLoginMessage"></p>
+        </div>
+    </div>
+    
+    <div id="divLobby" class="hidden">
+        <h2>Click a user for start game...</h2>
+        <div id="divUsersInLobby">
+              
+        </div>
+    </div>
+    <div id="divGame" class="hidden">
+        <h2><img src="risk-boardgame-logo-1CB739F7DA-seeklogo.com.png" alt="risk"></h2>
+        
+        <div id="info">
+            <p id="lblGameId"></p>
+        </div>
+        <div id="divBoard">
+            <button id="help" class="btnNot">Help?</button>
+        </div>
+        
+        <p><button class="btn lock" id="btnLeaveGame" onclick="btnLeaveGameClicked()">leave game</button></p>
+    </div>
+
+    <script src="./client_tools.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
